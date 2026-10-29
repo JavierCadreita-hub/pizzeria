@@ -1,0 +1,19 @@
+
+
+<div class="card h-100">
+  <div class="d-flex justify-content-between bg-info p-2 align-items-center">
+
+
+    <h5 class="card-title m-0">{{tarjeta().nombre}}</h5>
+    <button type="button" class="btn bg-light px-3">{{tarjeta().precio}}</button>
+  </div>
+  <img class="card-img-top"  alt="Card image cap" src="{{tarjeta().imagen}}">
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      @for (item of tarjeta().ingredientes; track $index) {
+        <li class="list-group-item">{{item}}</li>
+   }
+    </ul>
+
+  </div>
+</div>
