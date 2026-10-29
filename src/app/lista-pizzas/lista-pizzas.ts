@@ -11,6 +11,9 @@ import {Card} from './card/card';
 export class ListaPizzas {
 
 
+  //Vamos a recibir el ingrediente del app component
+  ingredienteRecibido = input.required<string>();
+
   Pizzas: Pizza[] = [
     {nombre: 'Margarita', precio: 8.5, imagen: '/images/margarita.jpg', ingredientes: ['tomate', 'mozzarella', 'albahaca fresca', 'aceite de oliva']},
     {nombre: 'Pepperoni', precio: 9.5, imagen: '/images/pepperoni.jpg', ingredientes: ['tomate', 'mozzarella', 'pepperoni', 'orégano']},

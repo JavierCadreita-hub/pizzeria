@@ -14,4 +14,13 @@ import {Footer} from './footer/footer';
 })
 export class App {
   protected readonly title = signal('pizzeria');
+
+  //recibir el emit del componente header.
+
+  ingredienteRecibido = '';
+
+  mostrarIngrediente(text: string){
+    this.ingredienteRecibido = text;
+  }
+
 }
