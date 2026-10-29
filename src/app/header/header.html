@@ -24,8 +24,8 @@
 
       </ul>
       <form class="d-flex gap-4" role="search">
-        <input #valor_ingrediente class="form-control" type="search" placeholder="buscar ingrediente" aria-label="Search"/>
-        <button (click)="emitirIngrediente(valor_ingrediente.value)" class="btn btn-outline-warning" type="button">Search</button>
+        <input #valor_ingrediente (input)="emitirIngrediente(valor_ingrediente.value)" class="form-control" type="search" placeholder="buscar ingrediente" aria-label="Search"/>
+        <button class="btn btn-outline-warning" type="button">Search</button>
       </form>
     </div>
   </div>
