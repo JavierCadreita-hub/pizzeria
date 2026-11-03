@@ -12,14 +12,10 @@
     <div class="collapse navbar-collapse gap-4" id="navbarSupportedContent">
       <ul class="navbar-nav gap-4 me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link text-white" routerLink="/" routerLinkActive="fw-bold text-decoration-underline" [routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' }">Pizzas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Carta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Contacto</a>
-
+          <a class="nav-link text-white" routerLink="/pedido" routerLinkActive="fw-bold text-decoration-underline">Pedidos</a>
         </li>
 
       </ul>

@@ -1,16 +1,19 @@
 import { Component, input, computed} from '@angular/core';
 import { Pizza } from '../models/Pizza';
 import {Card} from './card/card';
+import { Formulario } from '../formulario/formulario';
 
 @Component({
-  imports: [Card],
+  imports: [Card, Formulario],
   selector: 'app-lista-pizzas',
   styleUrl: './lista-pizzas.css',
   templateUrl: './lista-pizzas.html',
 })
 export class ListaPizzas {
   //Vamos a recibir el ingrediente del app component
-  ingredienteRecibido = input.required<string>();
+  // Llega desde la URL (?ingrediente=bacon) gracias a withComponentInputBinding (app.config.ts).
+  // Si en la URL no hay ingrediente, el router lo deja en undefined.
+  ingredienteRecibido = input<string | undefined>('', { alias: 'ingrediente' });
 
   Pizzas: Pizza[] = [
     {
@@ -68,7 +71,7 @@ export class ListaPizzas {
   // que contiene el texto del input (includes), y por eso la lista cambia.
 
   pizzasFIltradas = computed(() => {
-    const buscado = this.ingredienteRecibido().toLowerCase();
+    const buscado = (this.ingredienteRecibido() ?? '').toLowerCase();
 
     if (buscado === '') {
       return this.Pizzas;
