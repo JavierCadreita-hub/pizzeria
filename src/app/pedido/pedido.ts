@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PedidoService } from '../service/pedido-service';
 
 @Component({
   imports: [],
@@ -8,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class Pedido {
 
-
-
+pedidoService = inject(PedidoService);
 
 }

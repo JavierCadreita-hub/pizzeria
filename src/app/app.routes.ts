@@ -3,10 +3,8 @@ import { ListaPizzas } from './lista-pizzas/lista-pizzas';
 import { PaginaPedido } from './pagina-pedido/pagina-pedido';
 
 export const routes: Routes = [
-  // Página principal: la lista de pizzas con el filtro
-  { path: '', component: ListaPizzas },
-  // Página del pedido: resumen y formulario
-  { path: 'pedido', component: PaginaPedido },
-  // Cualquier otra dirección vuelve a la lista
-  { path: '**', redirectTo: '' },
+  { path: '', component: ListaPizzas }, // localhost:4200/
+  { path: 'pedido', component: PaginaPedido }, //localhost:4200/pedido
+  { path: '**', redirectTo: '' }, // cualquier otra cosa
 ];
+

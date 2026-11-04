@@ -12,8 +12,15 @@
     <ul class="list-group list-group-flush">
       @for (item of tarjeta().ingredientes; track $index) {
         <li class="list-group-item">{{item}}</li>
+
    }
     </ul>
+
+    <form [formGroup]="formulario" (ngSubmit)="anadir()" class="d-flex flex-row align-items-center gap-2 bg-light p-2 mt-2">
+      <input class="form-control" style="width: 5rem;" type="number" formControlName="cantidad" min="1" placeholder="1" aria-label="Cantidad">
+      <button type="submit" class="btn btn-primary ms-auto flex-shrink-0" [disabled]="formulario.invalid">AÑADIR</button>
+    </form>
+
 
   </div>
 </div>
