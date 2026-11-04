@@ -4,9 +4,13 @@
     <p class="mb-0">{{item.cantidad}}  {{item.pizza.nombre}}</p>
     <p class="mb-0">{{item.pizza.precio * item.cantidad}} $</p>
   </div>
-
-
-
-
+} @empty {
+  <p class="text-center fs-5">El carrito está vacío</p>
 }
 
+@if (pedidoService.Lineas().length > 0) {
+  <div class="d-flex bg-info justify-content-between align-items-center mb-3 p-3 w-50 mx-auto fs-5 fw-bold">
+    <p class="mb-0">Total carrito</p>
+    <p class="mb-0">{{pedidoService.totalCarrito()}} $</p>
+  </div>
+}
