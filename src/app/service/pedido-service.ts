@@ -16,4 +16,8 @@ export class PedidoService {
     this.Lineas.update(lista => [...lista,{pizza:pizza,cantidad:cantidad}])
   }
 
+  vaciar(){
+    this.Lineas.set([])
+  }
+
 }
